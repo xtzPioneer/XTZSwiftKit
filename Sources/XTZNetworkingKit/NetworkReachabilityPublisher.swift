@@ -1,5 +1,5 @@
 //
-//  XTZNetworkReachabilityPublisher.swift
+//  NetworkReachabilityPublisher.swift
 //
 //
 //  Created by 张雄 on 2023/11/22.
@@ -10,10 +10,10 @@ import Combine
 import Alamofire
 
 /// 网络可访问性发布者
-public final class XTZNetworkReachabilityPublisher {
+public final class NetworkReachabilityPublisher {
     
     /// 共享
-    public static let shared: XTZNetworkReachabilityPublisher = .init()
+    public static let shared: NetworkReachabilityPublisher = .init()
     
     /// 网络可访问性管理器
     private var networkReachabilityManager: NetworkReachabilityManager?

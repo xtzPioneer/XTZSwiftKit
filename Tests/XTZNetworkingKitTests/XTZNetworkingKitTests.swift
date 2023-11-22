@@ -16,7 +16,7 @@ final class XTZNetworkingKitTests: XCTestCase {
     func testExample() throws {
         let timeoutInterval: TimeInterval = 60.0
         let networkingExpectation = expectation(description: #function)
-        XTZNetworkReachabilityPublisher.shared.publisher.sink { status in
+        NetworkReachabilityPublisher.shared.publisher.sink { status in
             switch status {
             case .unknown:
                 print("未知网络")
