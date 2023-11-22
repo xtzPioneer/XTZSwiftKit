@@ -41,8 +41,13 @@ public final class NetworkReachabilityPublisher {
         self.networkReachabilityStatusSubject = .init()
         self.networkReachabilityManager?
             .startListening(onUpdatePerforming: { [weak self] in
+                #if swift(>=5.8)
                 guard let `self` else { return }
                 networkReachabilityStatusSubject.send($0)
+                #else
+                guard let `self` = self else { return }
+                self.networkReachabilityStatusSubject.send($0)
+                #endif
             })
     }
     
