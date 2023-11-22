@@ -10,26 +10,36 @@ let package = Package(
                 .tvOS(.v13),
                 .watchOS(.v6)],
     products: [
-        .library(name: "XTZNetworkingKit",
-                 targets: ["XTZNetworkingKit"]),
         .library(
             name: "XTZSwiftKit",
             targets: ["XTZSwiftKit"]),
+        .library(name: "XTZNetworkingKit",
+                 targets: ["XTZNetworkingKit"]),
+        .library(
+            name: "XTZCoreDataKit",
+            targets: ["XTZCoreDataKit"]),
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.8.1")),
     ],
     targets: [
         .target(
+            name: "XTZSwiftKit",
+            dependencies: []),
+        .target(
             name: "XTZNetworkingKit",
             dependencies: ["Alamofire"]),
         .target(
-            name: "XTZSwiftKit"),
+            name: "XTZCoreDataKit",
+            dependencies: []),
+        .testTarget(
+            name: "XTZSwiftKitTests",
+            dependencies: ["XTZSwiftKit"]),
         .testTarget(
             name: "XTZNetworkingKitTests",
             dependencies: ["XTZNetworkingKit"]),
         .testTarget(
-            name: "XTZSwiftKitTests",
-            dependencies: ["XTZSwiftKit"]),
+            name: "XTZCoreDataKitTests",
+            dependencies: ["XTZCoreDataKit"]),
     ]
 )
