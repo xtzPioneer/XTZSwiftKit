@@ -25,7 +25,7 @@ final class XTZNetworkingKitTests: XCTestCase {
             case .reachable(.cellular):
                 print("蜂窝网络")
             case .reachable(.ethernetOrWiFi):
-                print("WIFI网络")
+                print("WiFi网络")
             }
             networkingExpectation.fulfill()
         }
