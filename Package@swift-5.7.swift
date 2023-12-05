@@ -25,7 +25,10 @@ let package = Package(
     targets: [
         .target(
             name: "XTZSwiftKit",
-            dependencies: []),
+            dependencies: [
+                "XTZCoreDataKit",
+                "XTZNetworkingKit",
+            ]),
         .target(
             name: "XTZNetworkingKit",
             dependencies: ["Alamofire"]),
