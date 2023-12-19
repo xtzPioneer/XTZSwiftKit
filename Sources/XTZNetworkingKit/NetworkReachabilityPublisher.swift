@@ -22,7 +22,7 @@ public final class NetworkReachabilityPublisher {
     private var networkReachabilityStatusSubject: PassthroughSubject<NetworkReachabilityManager.NetworkReachabilityStatus, Never>
     
     /// 网络可访问性状态发布者
-    var publisher: AnyPublisher<NetworkReachabilityManager.NetworkReachabilityStatus, Never> {
+    public var publisher: AnyPublisher<NetworkReachabilityManager.NetworkReachabilityStatus, Never> {
         networkReachabilityStatusSubject.eraseToAnyPublisher()
     }
     
